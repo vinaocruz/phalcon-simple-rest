@@ -1,0 +1,24 @@
+{
+  "name": "vinaocruz/silex-simple-rest",
+  "type": "library",
+  "description": "A simple phalcon skeleton for rest api",
+  "keywords": [
+    "framework", "phalcon", "rest", "api"
+  ],
+  "homepage": "http://github.com/vinaocruz/phalcon-simple-rest",
+  "license": "MIT",
+  "authors": [{
+    "name": "Vinicius Cruz",
+    "email": "vinaocruz@gmail.com"
+  }],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-0": {
+      "App": "src/"
+    }
+  }
+}
