@@ -7,6 +7,7 @@ require_once __DIR__ . '/../src/dependencies.php';
 
 $app = new \Phalcon\Mvc\Micro($di);
 
+require_once __DIR__ . '/../src/middleware.php';
 require_once __DIR__ . '/../src/routes.php';
 
 $app->handle();
