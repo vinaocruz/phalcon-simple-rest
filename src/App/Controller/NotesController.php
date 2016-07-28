@@ -2,24 +2,24 @@
 
 namespace App\Controller;
 
-use Phalcon\Mvc\Controller;
-use Phalcon\Mvc\Micro\Collection as MicroCollection;
+use \Phalcon\Mvc\Micro\Collection as MicroCollection;
 
-class NotesController extends Controller
+class NotesController extends AbstractController
 {
-    public static function routes(MicroCollection $collection)
+    public static function routes(\Phalcon\Mvc\Micro $app, MicroCollection $collection)
     {
-        $collection->setHandler("App\Controller\NotesController", true);
-        $collection->setPrefix('/api/v1');
+        $collection->setHandler(__CLASS__, true);
+        $collection->setPrefix($app['config']['api.endpoint'] . $app['config']['api.version'] . '/notes');
 
-        $collection->get('/notes', 'fetchAll');
+        $collection->get('/', 'fetchAll');
 
         return $collection;
     }
 
     public function fetchAll()
     {
-        echo "list all";
+        $this->response->setJsonContent(['msg' => 'ok']);
+        return $this->response;
     }
 
 }

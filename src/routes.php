@@ -1,6 +1,5 @@
 <?php
 
-use Phalcon\Mvc\Micro\Collection as MicroCollection;
-use App\Controller\NotesController;
+use \Phalcon\Mvc\Micro\Collection as MicroCollection;
 
-$app->mount(NotesController::routes(new MicroCollection()));
+$app->mount(App\Controller\NotesController::routes($app, new MicroCollection()));

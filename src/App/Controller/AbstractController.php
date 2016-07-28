@@ -1,15 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vinicius
- * Date: 27/07/16
- * Time: 22:55
- */
 
 namespace App\Controller;
 
-
-class AbstractController
+/**
+ * Class AbstractController
+ * @package App\Controller
+ */
+abstract class AbstractController extends \Phalcon\Mvc\Controller
 {
+
+    public function onConstruct() {
+
+    }
 
 }
