@@ -1,8 +1,10 @@
 <?php
+
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../src/dependencies.php';
 
-$app = new Phalcon\Mvc\Micro();
+$app = new \Phalcon\Mvc\Micro($di);
 
-require __DIR__ . '/../src/routes.php';
+require_once __DIR__ . '/../src/routes.php';
 
 $app->handle();
