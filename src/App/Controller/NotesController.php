@@ -18,7 +18,7 @@ class NotesController extends AbstractController
 
     public function fetchAll()
     {
-        $this->response->setJsonContent(['msg' => 'ok']);
+        $this->response->setJsonContent($this->notes->getAll());
         return $this->response;
     }
 

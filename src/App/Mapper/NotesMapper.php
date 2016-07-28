@@ -28,7 +28,11 @@ class NotesMapper implements MapperInterface
 
     public function findAll($options = null)
     {
-        // TODO: Implement findAll() method.
+        //demo
+        return [
+            'welcome' => 'Hello world!',
+            'about' => 'Vinicius Cruz',
+        ];
     }
 
 }
