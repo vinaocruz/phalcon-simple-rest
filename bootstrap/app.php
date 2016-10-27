@@ -12,7 +12,7 @@ $di->set(
     function () {
         return new PdoMysql(
             [
-                "host"     => "localhost:33060",
+                "host"     => "172.17.0.1:33060",
                 "username" => "root",
                 "password" => "dev123",
                 "dbname"   => "my_app",

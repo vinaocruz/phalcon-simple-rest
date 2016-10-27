@@ -9,7 +9,19 @@ require __DIR__ . '/../bootstrap/app.php';
 $app->get(
     "/",
     function () {
-    	echo json_encode(['data' => 'teste']);
+		$pdo = new \PDO(
+		    'mysql:host=db;dbname=demoDb',
+		    'demoUser',
+		    'demoPass'
+		);
+
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		$consulta = $pdo->query('select * from users');
+
+		$linha= $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+    	echo json_encode($linha);
     }
 );
 
