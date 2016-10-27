@@ -1,7 +1,6 @@
 <?php
 
-$config['api.version'] = "/v1";
-$config['api.endpoint'] = "/api";
+$config['db'] = require_once __DIR__ . '/database.php';
 $config['api.timezone'] = 'America/Bahia';
 
 date_default_timezone_set($config['api.timezone']);
