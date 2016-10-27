@@ -15,10 +15,11 @@
     "php": ">=7.0"
   },
   "require-dev": {
+    
   },
   "autoload": {
     "psr-0": {
-      "App": "src/"
+       "App\\": "src/"
     }
   }
 }

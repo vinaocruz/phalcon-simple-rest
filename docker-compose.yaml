@@ -1,21 +1,22 @@
 version: '2'
 services:
-  db:
-    image: mysql
-    environment:
-      MYSQL_DATABASE: my_app
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: root
-      MYSQL_PASSWORD: dev123
-    ports:
-      - "3306:3306"
-  web:
-    image: vinaocruz/apache-php7-phalcon3
-    ports:
-      - "80:80"
-    volumes:
-      - .:/var/www/html:Z
-    depends_on:
-      - db
-    links:
-      - db
+    web:
+        image: nginx:latest
+        ports:
+            - "8080:80"
+        volumes:
+            - ./:/home/projeto
+            - ./vhost.conf:/etc/nginx/conf.d/default.conf
+    php:
+        image: edyonil/phpfpm
+        volumes:
+            - ./:/home/projeto
+    db:
+        image: mysql
+        environment:
+            MYSQL_DATABASE: my_app
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: root
+            MYSQL_PASSWORD: dev123
+        ports:
+            - "33060:3306"
