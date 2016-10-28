@@ -1,15 +1,14 @@
-<?php
-
-namespace App\Controller;
+<?php namespace App\Api\Controller;
 
 use \Phalcon\Mvc\Micro\Collection as MicroCollection;
 
 class NotesController extends AbstractController
 {
+
     public static function routes(\Phalcon\Mvc\Micro $app, MicroCollection $collection)
     {
         $collection->setHandler(__CLASS__, true);
-        $collection->setPrefix($app['config']['api.endpoint'] . $app['config']['api.version'] . '/notes');
+        $collection->setPrefix($app['config']['api.version'] . '/notes');
 
         $collection->get('/', 'fetchAll');
         $collection->get('/{id}', 'fetch');

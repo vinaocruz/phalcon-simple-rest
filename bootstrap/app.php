@@ -6,6 +6,9 @@ use Phalcon\Db\Adapter\Pdo\Mysql as PdoMysql;
 
 $di = new FactoryDefault();
 
+$dotenv = new Dotenv\Dotenv(__DIR__.'/../');
+$dotenv->load();
+
 // Set up the database service
 $di->set(
     "db",
@@ -21,5 +24,17 @@ $di->set(
     }
 );
 
+$di->set(
+    "config",
+    function () {
+        return 
+            [
+                'api.version' => getenv(API_VERSION)
+            ];
+    }
+);
+
 // Create and bind the DI to the application
 $app = new Micro($di);
+
+require __DIR__ . '/../src/Api/routes.php';
