@@ -15,7 +15,6 @@ class NotesController extends AbstractController
         $collection->post('/', 'save');
         $collection->put('/{id}', 'update');
         $collection->delete('/{id}', 'delete');
-
         return $collection;
     }
 
