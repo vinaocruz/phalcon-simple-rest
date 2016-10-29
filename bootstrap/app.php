@@ -35,6 +35,4 @@ $di->set(
 );
 
 // Create and bind the DI to the application
-$app = new Micro($di);
-
-require __DIR__ . '/../src/Api/routes.php';
+$app = new Micro();
