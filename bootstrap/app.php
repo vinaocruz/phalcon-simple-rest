@@ -9,29 +9,22 @@ $di = new FactoryDefault();
 $dotenv = new Dotenv\Dotenv(__DIR__.'/../');
 $dotenv->load();
 
-// Set up the database service
-$di->set(
-    "db",
-    function () {
-        return new PdoMysql(
-            [
-                "host"     => "172.17.0.1:33060",
-                "username" => "root",
-                "password" => "dev123",
-                "dbname"   => "my_app",
-            ]
-        );
-    }
-);
+$config = require __DIR__ .'/../config/database.php';
 
 $di->set(
     "config",
     function () {
-        return 
-            [
-                'api.version' => getenv(API_VERSION)
-            ];
+        return $config;
+    }
+);
+
+$di->set(
+    "db",
+    function () use ($config) {
+        return new PdoMysql($config['mysql']);
     }
 );
 
 $app = new Micro($di);
+
+require __DIR__ . '/../src/Api/routes.php';
