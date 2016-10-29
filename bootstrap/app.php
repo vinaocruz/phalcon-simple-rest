@@ -34,5 +34,4 @@ $di->set(
     }
 );
 
-// Create and bind the DI to the application
-$app = new Micro();
+$app = new Micro($di);

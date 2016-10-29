@@ -3,5 +3,4 @@
 use Phalcon\Mvc\Micro\Collection as MicroCollection;
 use App\Api\Controller\NotesController;
 
-//$app->mount(NotesController::routes($app, new MicroCollection()));
-
+$app->mount(App\Api\Controller\NotesController::routes(new MicroCollection()));

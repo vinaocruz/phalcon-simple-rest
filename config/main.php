@@ -1,3 +1,3 @@
 <?php
 //define environment
-require __DIR__ . '/dev.php';
+require_once __DIR__ . '/dev.php';

@@ -1,13 +1,9 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Phalcon\Mvc\Micro;
+require __DIR__ . '/../bootstrap/app.php';
 
-/*require __DIR__ . '/../bootstrap/app.php';
-
-require __DIR__ . '/../src/Api/routes.php';*/
-
-$app = new Micro();
+require __DIR__ . '/../src/Api/routes.php';
 
 $app->get(
     "/api",
