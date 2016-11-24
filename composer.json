@@ -1,5 +1,5 @@
 {
-  "name": "vinaocruz/silex-simple-rest",
+  "name": "vinaocruz/phalcon-simple-rest",
   "type": "library",
   "description": "A simple phalcon skeleton for rest api",
   "keywords": [
